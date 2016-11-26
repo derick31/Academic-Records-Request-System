@@ -26,6 +26,8 @@ class CreateAlumniTable extends Migration
             $table->string('birthplace');
             $table->string('father_name');
             $table->string('mother_name');
+            $table->integer('apply_status');    //added nov 26
+            $table->date('apply_date');         //added nov 26
             $table->timestamps();
         });
     }

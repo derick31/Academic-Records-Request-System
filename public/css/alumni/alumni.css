@@ -1,0 +1,13 @@
+.copies{
+	display: none;
+}
+#date-application{
+	margin: 0px auto;
+	width: 24%;
+}
+#panel2, #panel3{
+	display: none;
+}
+#add-request{
+	display: none;
+}
