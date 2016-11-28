@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('alumni.apply');
-});
+
+Route::get('/', 'PagesController@index');
+// Account type checker goes here
+// If alumni,
+Route::get('/dashboard', 'AlumniController@dashboard');
+Route::get('/editaccount', 'AlumniController@editaccount');
+Route::get('/requestrecord', 'AlumniController@requestrecord');
+
+// Else if staff,
+// Route::get('/account', 'StaffController@dashboard');
