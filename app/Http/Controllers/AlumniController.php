@@ -10,7 +10,7 @@ class AlumniController extends Controller
 
 	public function __construct()
 	{
-		$this->middleware('alumnilogin');
+		
 	}
 	
 	public function dashboard(Request $request)
