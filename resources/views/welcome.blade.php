@@ -46,14 +46,25 @@
                     <!-- </div> -->
                     <hr style="border: 1px solid #7B1113; width: 99%; margin-top: 12%;"/>
                     <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%; margin-bottom: -15px;" id="alumnus-field">
-                        <form action="{!! url('/user/account/')!!}" method="get">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                            {{ csrf_field() }}
                             <label>&nbsp;<span id="user-id-label" class="input-labels">User ID:</span></label>
                             <div class="input-divs">
-                                <input id="user-id" class="inputs-rows" type="text" placeholder="User ID" value="" name="user-id" />
+                                <input id="user-id" class="inputs-rows" name="user_id" value="{{ old('user_id') }}" placeholder="Alumni ID" required autofocus>
+                                @if ($errors->has('user_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('user_id') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <label>&nbsp;<span id="user-password-label" class="input-labels">Password:</span></label>
                             <div class="input-divs">
-                                <input id="user-password" class="inputs-rows" type="password" placeholder="Password" value="" name="password"/>
+                                <input id="password" type="password" class="inputs-rows" name="password" placeholder="Password" required>
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="input-divs">
                                 <input type="submit" class="btn btn-sbmt" name="login" value="LOGIN"/>
@@ -69,14 +80,26 @@
                         </form>
                     </div>
                     <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%; margin-bottom: -15px;" id="admin-field">
-                        <form action="{!! url('/user/account/')!!}" method="get">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                            {{ csrf_field() }}
                             <label>&nbsp;<span id="admin-id-label" class="input-labels">Admin ID:</span></label>
                             <div class="input-divs">
-                                <input id="admin-id" class="inputs-rows" type="text" placeholder="Admin ID" value="" name="admin-id" />
+                                <input id="admin-id" class="inputs-rows" name="user_id" value="{{ old('user_id') }}" required autofocus>
+                                @if ($errors->has('user_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('user_id') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <label>&nbsp;<span id="admin-password-label" class="input-labels">Password:</span></label>
                             <div class="input-divs">
-                                <input id="admin-password" class="inputs-rows" type="password" placeholder="Password" value="" name="admin-password"/>
+                                <input id="admin-password" type="password" class="inputs-rows" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="input-divs">
                                 <input type="submit" class="btn btn-sbmt" name="login-admin" value="LOGIN"/>
