@@ -22,6 +22,7 @@ Route::get('/requestrecord', 'AlumniController@requestrecord');
 
 // Else if staff,
 // Route::get('/account', 'StaffController@dashboard');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

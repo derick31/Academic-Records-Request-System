@@ -9,7 +9,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><h4>Applying for</h4></div>
                 <div class="panel-body">
-                    
+                
                     <div id="panel1">
                         <div>
                             <a data-toggle="collapse" class="request-type-collapsibles" href="#otr-options"><span class="glyphicon glyphicon-plus-sign"></span> Official Transcript of Records</a>
@@ -41,7 +41,6 @@
                                    </div>
                                    <div class="col-md-6">
                                     <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="eng-med-instr"/>
-                                </div>
                             </div>
                             <div class="row">
                                 <div class="checkbox col-md-5 col-md-offset-1">
@@ -49,7 +48,6 @@
                                 </div>
                                 <div class="col-md-6">
                                     <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="cav"/>
-                                </div>
                             </div>
                             <div class="row">
                                 <div class="checkbox col-md-5 col-md-offset-1">
@@ -126,7 +124,6 @@
                                 </div>
                                 <div class="col-md-6">
                                     <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="record-verification"/>
-                                </div>
                             </div>
                             <div class="row">
                                 <div class="checkbox col-md-5 col-md-offset-1">
@@ -156,7 +153,6 @@
                     <p>&nbsp;</p>
                     <input id="others" type="text" class="form-control hide" placeholder="Others" name="others"/>
                 </div>
-                
             </div>
         </div>
         <div class="clearfix">
