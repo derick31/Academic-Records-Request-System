@@ -4,9 +4,12 @@
 <div class="container">
     <div class="row" style="margin-top: 5%;">
         <div class="col-md-7 col-md-offset-3">
+        <form method="POST" action="dashboard">
+             {{ csrf_field() }}
             <div class="panel panel-default">
                 <div class="panel-heading"><h4>Applying for</h4></div>
                 <div class="panel-body">
+                    
                     <div id="panel1">
                         <div>
                             <a data-toggle="collapse" class="request-type-collapsibles" href="#otr-options"><span class="glyphicon glyphicon-plus-sign"></span> Official Transcript of Records</a>
@@ -16,7 +19,7 @@
                                         <label><input type="checkbox" class="checkbox-click" name="otr-authenticated-copies" id="otr-authenticated-copies"/> Authenticated copies</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                        <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="authenticated-copies"/>
                                     </div>
                                 </div>
                             </div>
@@ -29,7 +32,7 @@
                                         <label><input type="checkbox" class="checkbox-click" name="cert-certificate-of-grad" id="cert-certificate-of-grad"/> Certificate of Graduation</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                        <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="cert-grad"/>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -37,7 +40,7 @@
                                        <label><input type="checkbox" class="checkbox-click" name="cert-english-as-a-medium-of-instruction" id="cert-english-as-a-medium-of-instruction"/> English as a medium of instruction</label>
                                    </div>
                                    <div class="col-md-6">
-                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="eng-med-instr"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -45,7 +48,7 @@
                                     <label><input type="checkbox" class="checkbox-click" name="cert-cav" id="cert-cav"/> CAV (Authentication and Verification)</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="cav"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -53,7 +56,7 @@
                                     <label><input type="checkbox" class="checkbox-click" name="cert-course-desc" id="cert-course-desc"/> Course description</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="course-desc"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -61,7 +64,7 @@
                                     <label><input type="checkbox" class="checkbox-click" name="cert-unites-earned" id="cert-unites-earned"/> Units earned</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="units-earned"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -69,7 +72,7 @@
                                     <label><input type="checkbox" class="checkbox-click" name="cert-bonafide-student" id="cert-bonafide-student"/> Bonafide Student</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="bon-stud"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -77,7 +80,7 @@
                                     <label><input type="checkbox" class="checkbox-click" name="cert-gwa" id="cert-gwa"/> General Weighted Average</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="gwa"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -85,7 +88,7 @@
                                     <label><input type="checkbox" class="checkbox-click" name="cert-gpa" id="cert-gpa"/> Grade Point Average</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="gpa"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -93,7 +96,7 @@
                                     <label><input type="checkbox" class="checkbox-click" name="cert-letter-of-no-objection" id="cert-letter-of-no-objection"/> Letter of No Objection</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="letter-no-obj"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -101,7 +104,7 @@
                                     <label><input type="checkbox" class="checkbox-click" name="cert-hd" id="cert-hd"/> HD (for graduated students only)</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="hd-for-grad"/>
                                 </div>
                             </div>
                         </div>
@@ -114,7 +117,7 @@
                                     <label><input type="checkbox" class="checkbox-click" name="others-eng-diploma" id="others-eng-diploma"/> English Translation of Diploma</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="eng-diploma"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -122,7 +125,7 @@
                                     <label><input type="checkbox" class="checkbox-click" name="others-record-verification" id="others-record-verification"/> Record Verification</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="record-verification"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -130,7 +133,7 @@
                                     <label><input type="checkbox" class="checkbox-click" name="others-authentication" id="others-authentication"/> Authentication</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name=""/>
+                                    <input type="text" class="form-control copies" placeholder="Enter no. of copies" name="authent"/>
                                 </div>
                             </div>
                         </div>
@@ -153,16 +156,18 @@
                     <p>&nbsp;</p>
                     <input id="others" type="text" class="form-control hide" placeholder="Others" name="others"/>
                 </div>
+                
             </div>
         </div>
         <div class="clearfix">
             <div class="pull-right">
-                <button id="back" disabled="" class="btn btn-danger">Back</button>
-                <button id="next" class="btn btn-info">Next</button>
-                <button id="add-request" type="submit" class="btn btn-success">Submit Request</button>
+                <button id="back" type="button" disabled="" class="btn btn-danger">Back</button>
+                <button id="next" type="button" disabled="" class="btn btn-info">Next</button>
+                <input id="add-request" type="submit" disabled="" class="btn btn-success" value="Submit Request"/>
             </div>
         </div>
         <div>&nbsp;</div>
+        </form>
     </div>
 </div>
 </div>
