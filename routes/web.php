@@ -20,6 +20,12 @@ Route::post('/dashboard', 'AlumniController@dashboard');
 Route::get('/editaccount', 'AlumniController@editaccount');
 Route::get('/requestrecord', 'AlumniController@requestrecord');
 
+
+Route::get('/', 'PagesController@home');
+Route::get('/user/account', 'PagesController@acct_user');
+Route::get('/register', 'PagesController@register');
+Route::get('/superadmin','PagesController@superadmin_home');
+
 // Else if staff,
 // Route::get('/account', 'StaffController@dashboard');
 

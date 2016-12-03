@@ -1,6 +1,6 @@
 <div>
     <nav class="navbar navbar-default navbar-bg">
-        <div class="container-fluid topnav nav-size">
+        <div class="container-fluid topnav">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#opts-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -18,10 +18,10 @@
             </div>
             <div class="collapse navbar-collapse" id="opts-collapse">
                 <ul class="nav navbar-nav navbar-right" id="">
-                   <!--  <li class="active"><a>Home</a></li>
+                    <li class="active"><a>Home</a></li>
                     <li class="">
                         <a href="#" data-toggle="modal" data-target="#login" style="color: white;font-weight: 700;">Login</a>
-                    </li> -->
+                    </li>
                     </li>
                 </ul>
             </div>

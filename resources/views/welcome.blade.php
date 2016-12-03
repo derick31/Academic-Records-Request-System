@@ -1,95 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+@extends('layout')
+@section('title', 'Academic Records Request System')
+@section('img/title_logo.jpg', 'Academic Records Request System')
+@section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<div class="jumbotron welcome-page-body" style="border: 0px solid transparent;">
+    <div class="col-md-12">
+        <div class="col-md-6" style="border: 1px solid transparent;">
+            <div class="panel panel-default rates-table" style="background: rgba(255, 255, 255, 0.70);">
+                <div class="panel" style="background: rgba(123, 17, 19, 0.30); margin-bottom: -1px;">
+                <dl>
+                    <dt style="margin-left: 1%; margin-top: 1%;">RATES:</dt>
+                    <hr/>
+                </dl>
+                <dl style="margin-left: 5%;">
+                    <dt>Official Transcript of Records</dt>
+                    <dt style="margin-left: 5%; font-style: italic;">Pph 50.00/page (on security paper)</dd>
+                    <dt>OTR Application from Abroad</dt>
+                    <dt style="margin-left: 5%; font-style: italic;">inclusive of mailing, exclusive of bank charges</dt>
+                    <dt style="margin-left: 5%; font-style: italic;">US $ 30.00 via registered mail</dt>
+                    <dt style="margin-left: 5%; font-style: italic;">US $ 50.00 Asia &amp; US via courier</dt>
+                    <dt style="margin-left: 5%; font-style: italic;">US $ 60.00 Europe &amp; Africa via courier</dt>
+                    <dt>Certificates &nbsp;&nbsp; Php 40.00/page</dt>
+                    <dt>English translation of diploma &nbsp;&nbsp; Php 50.00/copy</dt>
+                    <dt>Computation of GWA/GPA&nbsp;&nbsp; Php 100.00/computation</dt>
+                    <dt>Authentication of documents&nbsp;&nbsp; Php 20.00/page</dt>
+                    <dt>English translation of diploma &nbsp;&nbsp; Php 50.00/copy</dt>
+                    <dt>Envelop &nbsp;&nbsp; Php 10.00/envelop</dt>
+                    <dt>Administrative cost &nbsp;&nbsp; Php 10.00</dt>
+                    <dt>Verification of Records</dt>
+                    <dt style="margin-left: 5%; font-style: italic;">Local Php 100/student</dt>
+                    <dt style="margin-left: 5%; font-style: italic;">Application from abroad US $ 20.00</dt>
+                    <dt style="margin-left: 5%; font-style: italic;">(exclusive of OTR and bank charges)</dt>
+                    <dt>Mailing fees are subject to prevailing postal rates</dt>
+                </dl></div>
+            </div>
+        </div>
+        <div class="col-md-6" style="">
+            <div class="pull-right" style="width: 58%; background: rgba(255, 255, 255, 0.70); border-radius: 15px;">
+                <div class="login-form-body" style="background: rgba(123, 17, 19, 0.30); border-radius: 15px;">
+                    <!-- <div style="width: 100%; height: 50px; background: #7B1113; border-top-left-radius: 15px; border-top-right-radius: 15px;" class="col-md-12"> -->
+                        <!-- <div style="margin-bottom: 4%;"> -->
+                            <span class="col-md-6 pill-login" id="alumnus-login" style="width: 50%; height: 50px; background: #7B1113; border-top-left-radius: 15px;"><br/>ALUMUNUS</span>
+                            <span class="col-md-6 pill-login" id="admin-login" style="width: 50%; height: 50px; background: white; border-top-right-radius: 15px; color: #7B1113;"><br/>ADMIN</span>
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <hr style="border: 1px solid #7B1113; width: 99%; margin-top: 12%;"/>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%; margin-bottom: -15px;" id="alumnus-field">
+                        <form action="{!! url('/user/account/')!!}" method="get">
+                            <label>&nbsp;<span id="user-id-label" class="input-labels">User ID:</span></label>
+                            <div class="input-divs">
+                                <input id="user-id" class="inputs-rows" type="text" placeholder="User ID" value="" name="user-id" />
+                            </div>
+                            <label>&nbsp;<span id="user-password-label" class="input-labels">Password:</span></label>
+                            <div class="input-divs">
+                                <input id="user-password" class="inputs-rows" type="password" placeholder="Password" value="" name="password"/>
+                            </div>
+                            <div class="input-divs">
+                                <input type="submit" class="btn btn-sbmt" name="login" value="LOGIN"/>
+                            </div>
+                            <div>
+                                <p class="no-account">
+                                    No Account yet? Register <a href="{!! url('/register')!!}">here</a>!
+                                </p>
+                            </div>
+                            <div><p>&nbsp;</p></div>
+                            <!-- <hr style="border: 1px solid #7B1113;"/> -->
+                            <!-- <div style="width: 100%; height: 50px; background: #7B1113; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; "></div> -->
+                        </form>
+                    </div>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%; margin-bottom: -15px;" id="admin-field">
+                        <form action="{!! url('/user/account/')!!}" method="get">
+                            <label>&nbsp;<span id="admin-id-label" class="input-labels">Admin ID:</span></label>
+                            <div class="input-divs">
+                                <input id="admin-id" class="inputs-rows" type="text" placeholder="Admin ID" value="" name="admin-id" />
+                            </div>
+                            <label>&nbsp;<span id="admin-password-label" class="input-labels">Password:</span></label>
+                            <div class="input-divs">
+                                <input id="admin-password" class="inputs-rows" type="password" placeholder="Password" value="" name="admin-password"/>
+                            </div>
+                            <div class="input-divs">
+                                <input type="submit" class="btn btn-sbmt" name="login-admin" value="LOGIN"/>
+                            </div>
+                            <div>
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="notes">
+                                <p>&nbsp;</p>
+                            </div>
+                            <!-- <hr style="border: 1px solid #7B1113;"/> -->
+                            <!-- <div style="width: 100%; height: 50px; background: #7B1113; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; "></div> -->
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+
+<!-- Script -->
+<script type="text/javascript"></script>
+@endsection
