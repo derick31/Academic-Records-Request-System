@@ -8,12 +8,16 @@ class Alumnus extends Model
 {
     protected $table = 'alumni';
 
-    public getTransaction ()
+    public function getTransaction ()
     {
         return $this->hasMany(Transaction::class);
     }
+    public function getTransactionRequests ()
+    {
+        return $this->hasMany(TransactionRequests::class);
+    }
 
-    public getSchool ()
+    public function getSchool ()
     {
         return $this->hasMany(School::class);
     }

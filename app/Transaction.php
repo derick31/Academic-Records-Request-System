@@ -17,5 +17,10 @@ class Transaction extends Model
     {
         return $this->hasMany(Request::class);
     }
+
+    public function transactionRequests()
+    {
+        return $this->hasMany(transactionRequests::class);
+    }
     //
 }
