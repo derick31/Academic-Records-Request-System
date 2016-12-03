@@ -154,7 +154,6 @@
                     <input id="others" type="text" class="form-control hide" placeholder="Others" name="others"/>
                 </div>
             </div>
-        </div>
         <div class="clearfix">
             <div class="pull-right">
                 <button id="back" type="button" disabled="" class="btn btn-danger">Back</button>

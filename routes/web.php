@@ -21,14 +21,15 @@ Route::get('/editaccount', 'AlumniController@editaccount');
 Route::get('/requestrecord', 'AlumniController@requestrecord');
 
 
-Route::get('/', 'PagesController@home');
 Route::get('/user/account', 'PagesController@acct_user');
 Route::get('/register', 'PagesController@register');
 Route::get('/superadmin','PagesController@superadmin_home');
+
+Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
 
 // Else if staff,
 // Route::get('/account', 'StaffController@dashboard');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');

@@ -3,16 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
+
 use App\Transaction;
 use App\TransactionRequests;
+use Auth;
+
 class AlumniController extends Controller
 {
 
 	public function __construct()
-	{
-		
-	}
+    {
+    	$this->middleware(function ($request, $next) {
+			if(Auth::user()->type != 'alumni'){
+				return redirect('home');
+			}
+	    	return $next($request);
+		});
+    }
 	
 	public function dashboard(Request $request)
 	{
@@ -139,28 +146,6 @@ class AlumniController extends Controller
 			$transaction_requests->copies = $num_of_copies;
 			$transaction_requests->save();
 		}
-
-=======
-use Auth;
-
-class AlumniController extends Controller
-{
-	public function __construct()
-    {
-    	$this->middleware(function ($request, $next) {
-			if(Auth::user()->type != 'alumni'){
-				return redirect('home');
-			}
-	    	return $next($request);
-		});
-    }
-
-	public function dashboard()
-	{
-		return Auth::user();
->>>>>>> authTest
-		$this->params['sidebar_active'] = 'dashboard';
-		return view('alumni.dashboard', $this->params);
 	}
 
 	public function editaccount()

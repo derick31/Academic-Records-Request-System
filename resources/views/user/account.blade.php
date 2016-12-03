@@ -16,7 +16,15 @@
 			Request Academic Record
 		</div>
 		<div class="account-sidebar" id="logout">
-			<a href="{!! url('../') !!}">Logout</a>
+			{{-- <a href="{!! url('../') !!}">Logout</a> --}}
+			<a href="{{ url('/logout') }}"
+                onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+                Logout
+            </a>
+            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
 		</div>
 	</div>
 	<div id="dashboard-content" class="col-md-9 dashboard-display" style="border-left: 4px solid #7B1113; min-height: 633px; margin-right: -12px;">

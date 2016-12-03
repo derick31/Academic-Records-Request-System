@@ -59,7 +59,7 @@
                             </div>
                             <label>&nbsp;<span id="user-password-label" class="input-labels">Password:</span></label>
                             <div class="input-divs">
-                                <input id="password" type="password" class="inputs-rows" name="password" placeholder="Password" required>
+                                <input id="user-password" type="password" class="inputs-rows" name="password" placeholder="Password" required>
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>

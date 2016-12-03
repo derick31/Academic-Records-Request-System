@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -24,7 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return Auth::user();
-        return view('home');
+        if(Auth::user()){
+            if(Auth::user()->type == 'alumni')
+                return view('user.account');
+            elseif (Auth::user()->type == 'staff') {
+                return view('admin.account');
+            }       
+        }else {
+            return view('welcome');
+        }
     }
 }
