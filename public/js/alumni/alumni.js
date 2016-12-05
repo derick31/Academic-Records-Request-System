@@ -11,7 +11,7 @@ $(document).ready(function(){
 		}
 	});
 	$("input[name=status]").click(function(){
-		status = $("input[name=status]:checked").val();
+		status = $("input[name=statsus]:checked").val();
 		if(status == 1){
 			$(".date-application").fadeIn();
 		}
