@@ -5,7 +5,6 @@
 <div class="col-md-12" style="margin-top: -20px;">
 	<div class="jumbotron col-md-3 sidebar-column" style="margin-left: -15px; height: 633px;">
 		<div style="margin-bottom: 4%;">
-			<!-- <img class="prof-img" src="../img/UP.png" style="border-radius: 100%;"/> -->
 			<span class="welcome-note-dashboard" style="margin-left: 20%; "><h4 class="heading-label">[Student's Name]</h4></span> 
 		</div>
 		<div class="active-clicked" id="dashboard">
@@ -200,7 +199,7 @@
 		      						</table>
 	      						</div>
 	      						<hr style="border: 1px solid #7B1113;"/>
-	      						<h5 class="heading-label receipt-align-center">CLAIM STUB</h5>
+	      						<!-- <h5 class="heading-label receipt-align-center">CLAIM STUB</h5>
 	      						<h6 class="heading-label receipt-align-left">Note: To be FILLED-OUT by O.U.R. Staff</h6>
 	      						<h6 class="heading-label receipt-align-left">Date Paid: ____________</h6>
 	      						<h6 class="heading-label receipt-align-left">Due Date:&nbsp; ____________</h6>
@@ -220,7 +219,7 @@
 	      									<td class="receipt-ital">Within 1 Week</td>
 	      								</tr>
 	      							</table>
-	      						</div>
+	      						</div> -->
 	      					</div>
 	      					<div class="modal-footer">
 	        					<button type="button" class="btn btn-add-emp btn-close-receipt" data-dismiss="modal">Close</button>
