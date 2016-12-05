@@ -16,8 +16,8 @@ Route::get('/alumnilogin', 'PagesController@index');
 // Account type checker goes here
 // If alumni,
 Route::get('/dashboard', 'AlumniController@dashboard');
-Route::post('/dashboard', 'AlumniController@dashboard');
-Route::get('/editaccount', 'AlumniController@editaccount');
+Route::post('/paymentassessment', 'AlumniController@paymentassessment');
+Route::post('/addrequest', 'AlumniController@addrequest');
 Route::post('/updateaccount', 'AlumniController@updateaccount');
 Route::get('/requestrecord', 'AlumniController@requestrecord');
 
