@@ -18,6 +18,7 @@ Route::get('/alumnilogin', 'PagesController@index');
 Route::get('/dashboard', 'AlumniController@dashboard');
 Route::post('/dashboard', 'AlumniController@dashboard');
 Route::get('/editaccount', 'AlumniController@editaccount');
+Route::post('/updateaccount', 'AlumniController@updateaccount');
 Route::get('/requestrecord', 'AlumniController@requestrecord');
 
 
