@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	$('.copies').hide();
 
+	
 	$('.checkbox-click').click(function(){
 		if($(this).is(':checked')){
 			$(this).closest('div[class="row"]').find('input[type="text"]').fadeIn();
