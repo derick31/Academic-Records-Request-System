@@ -22,16 +22,13 @@ class AlumniController extends Controller
 		});
     }
 	
-	public function dashboard(Request $request)
-	{
-		$this->middleware('alumnilogin');
-	}
 	public function dashboard()
 	{
 
 		$this->params['sidebar_active'] = 'dashboard';
 		return view('alumni.dashboard', $this->params);
 	}
+	
 	public function paymentassessment(Request $request)
 	{
 		$requests = $request->IDs;

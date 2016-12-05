@@ -5,11 +5,10 @@
     <div class="row" style="margin-top: 5%;">
         <div class="col-md-7 col-md-offset-3">
         <form method="POST" action="addrequest">
-             {{ csrf_field() }}
+            {{ csrf_field() }}
             <div class="panel panel-default">
                 <div class="panel-heading"><h4>Applying for</h4></div>
                 <div class="panel-body">
-                    
                     <div id="panel1">
                         <div>
                             <a data-toggle="collapse" class="request-type-collapsibles" href="#otr-options"><span class="glyphicon glyphicon-plus-sign"></span> Official Transcript of Records</a>
@@ -189,8 +188,7 @@
         </form>
     </div>
 </div>
-</div>
-<script>
+</div><script>
     // token and createPostUrl are needed to be passed to AJAX method call
     var token = '{{csrf_token()}}';
     var paymentassessmentUrl = 'paymentassessment';
