@@ -24,11 +24,18 @@
 			<div>
 				<h4 class="heading-label reqs-label">Requests History:</h4>
 				<div class="col-md-8">
+
 					<table class="table-requests-made">
 					<th>Request Number</th>
 					<th>Documents Requested</th>
 					<th>Status</th>
 					<th>Transaction Date</th>
+					<tr class="doc-pricing">
+		            	<td></td>
+		            	<td></td>
+			            <td></td>
+			            <td></td>
+		          	</tr>
 
 		        	<tr>
 						<td>211</td>
