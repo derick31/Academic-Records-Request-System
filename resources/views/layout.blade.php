@@ -8,7 +8,9 @@
         <title>@yield('title')</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        {{-- <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> --}}
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
         <!-- icon -->
         <link rel="icon" href="{!! url('img/title_logo.jpg') !!}" type="image/jpg" />
         <!-- Styles -->
@@ -29,7 +31,8 @@
             }
             html, body {
                 background-color: #fff;
-                font-family: 'Raleway', sans-serif;
+                /*font-family: 'Raleway', sans-serif;*/
+                font-family: 'Lato', sans-serif;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;

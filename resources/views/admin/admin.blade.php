@@ -28,11 +28,82 @@
         </div>
 	</div>
 	<div id="dashboard-content" class="col-md-9 dashboard-display" style="border-left: 4px solid #7B1113; min-height: 633px; margin-right: -12px;">
-		<div>Welcome User</div>
+		<div class="page-header">
+            <h1>Transactions <small>manage your requests here</small></h1>
+        </div>
+        
+        <div class="col-md-8">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Sort by:
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Date</a></li>
+                    <li><a href="#">Status</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <br>
+            <div class="panel panel-default">
+                <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-success">paid</span></div>
+                <div class="panel-body">
+                    <span>Juan Dela Cruz</span>
+                    <button type="button" class="btn btn-primary pull-right">View</button>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-success">paid</span></div>
+                <div class="panel-body">
+                    <span>Juan Dela Cruz</span>
+                    <button type="button" class="btn btn-primary pull-right">View</button>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-success">paid</span></div>
+                <div class="panel-body">
+                    <span>Juan Dela Cruz</span>
+                    <button type="button" class="btn btn-primary pull-right">View</button>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-warning">pending</span></div>
+                <div class="panel-body">
+                    <span>Juan Dela Cruz</span>
+                    <button type="button" class="btn btn-primary pull-right">View</button>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-warning">pending</span></div>
+                <div class="panel-body">
+                    <span>Juan Dela Cruz</span>
+                    <button type="button" class="btn btn-primary pull-right">View</button>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-warning">pending</span></div>
+                <div class="panel-body">
+                    <span>Juan Dela Cruz</span>
+                    <button type="button" class="btn btn-primary pull-right">View</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h4>Updates:</h4>
+            <div class="panel panel-default">
+                <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-warning">pending</span></div>
+                <div class="panel-body">
+                    <span>Juan Dela Cruz</span>
+                    <button type="button" class="btn btn-primary pull-right">View</button>
+                </div>
+            </div>
+        </div>
 	</div>
 	<div id="request-content" class="col-md-9 dashboard-display" style="border-left: 4px solid #7B1113; min-height: 633px; margin-right: -12px;">
 		<div>View Requests</div>
-		<div class="col-md-12">
+		{{-- <div class="col-md-12">
 	      	<div class="col-md-7" style="border: 2px solid transparent; min-height: 100%;">
 		        <table border='0' style="min-width: 100%;">
 		          <th>REQUESTOR NAME</th>
@@ -92,7 +163,7 @@
 		          </tr>
 		        </table>
 		    </div>
-		</div>
+		</div> --}}
 	</div>
 	<div class="modal fade" id="record-modal" role="dialog">
         <div class="modal-dialog" style="width: 100%;">
