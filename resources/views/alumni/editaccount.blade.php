@@ -21,39 +21,52 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-md-2"><label class="edit-label">Address:</label></div>
-						<div class="col-md-10"><input type="text" class="form-control" value= "{{ $address }}" name="address" /></div>
+						<div class="col-md-10">
+							<input id="address" type="text" class="form-control" value= "{{ $address }}" name="address" />
+							<p id="address-error-message" class="error">&nbsp;</p>
+						</div>
 					</div>
-					<br/>
 					<div class="row">
 						<div class="col-md-2"><label class="edit-label">Contact #:</label></div>
-						<div class="col-md-10"><input type="number" class="form-control" value = "{{ $contact_number }}" name="contact" /></div>
+						<div class="col-md-10">
+							<input id="contact-number" type="number" class="form-control" value = "{{ $contact_number }}" name="contact" />
+							<p id="contact-error-message" class="error">&nbsp;</p>
+						</div>
 					</div>
-					<br/>
 					<div class="row">
 						<div class="col-md-2"><label class="edit-label">Email:</label></div>
-						<div class="col-md-10"><input type="email" class="form-control" value="{{ $email }}" name="email" /></div>
+						<div class="col-md-10">
+							<input id="email" type="email" class="form-control" value="{{ $email }}" name="email" />
+							<p id="email-error-message" class="error">&nbsp;</p>
+						</div>
 					</div>
-					<br/>
 					<div class="row">
 						<div class="col-md-2"><label class="edit-label">Birth place:</label></div>
-						<div class="col-md-10"><input type="text" class="form-control" value="{{ $birthplace }}"  name="birth" /></div>
+						<div class="col-md-10">
+							<input id="birth" type="text" class="form-control" value="{{ $birthplace }}"  name="birth" />
+							<p id="birth-error-message" class="error">&nbsp;</p>
+						</div>
 					</div>
-					<br/>
 					<div class="row">
 						<div class="col-md-2"><label class="edit-label">Father's name:</label></div>
-						<div class="col-md-10"><input type="text" class="form-control" value="{{ $father_name }}" name="father" /></div>
+						<div class="col-md-10">
+							<input id="father" type="text" class="form-control" value="{{ $father_name }}" name="father" />
+							<p id="father-error-message" class="error">&nbsp;</p>
+						</div>
 					</div>		
-					<br/>
 					<div class="row">
 						<div class="col-md-2"><label class="edit-label">Mother's name:</label></div>
-						<div class="col-md-10"><input type="text" class="form-control" value="{{ $mother_name }}" name="mother" /></div>
+						<div class="col-md-10">
+							<input id="mother" type="text" class="form-control" value="{{ $mother_name }}" name="mother" />
+							<p id="mother-error-message" class="error">&nbsp;</p>
+						</div>
 					</div>																														
 				</div>
 			</div>
 			<div class="clearfix">
 				<div class="pull-right">
-					<button id="back" class="btn btn-danger">Reset</button>
-					<button id="next" class="btn btn-info">Submit</button>
+					<button id="reset" type="reset" class="btn btn-danger">Reset</button>
+					<button id="submit" class="btn btn-info">Submit</button>
 				</div>
 			</div>	
 			</form>		

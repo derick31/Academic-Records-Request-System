@@ -8,6 +8,7 @@ use App\Transaction;
 use App\TransactionRequests;
 use Auth;
 
+use App\RequestModel;
 class AlumniController extends Controller
 {
 
@@ -21,7 +22,26 @@ class AlumniController extends Controller
 		});
     }
 	
-	public function dashboard(Request $request)
+	public function dashboard()
+	{
+
+		$this->params['sidebar_active'] = 'dashboard';
+		return view('alumni.dashboard', $this->params);
+	}
+	
+	public function paymentassessment(Request $request)
+	{
+		$requests = $request->IDs;
+		$num_of_copies = $request->num_of_copies;
+		$array_of_requests = array();
+		for($i=0; $i < sizeof($requests); $i++){
+		$request_info = RequestModel::find($requests[$i]);
+			array_push($array_of_requests, $request_info->request_description, $request_info->price, $num_of_copies[$i], $request_info->price * $num_of_copies[$i]);
+		}
+		
+		return response()->json(['req' => $array_of_requests]);
+	}
+	public function addrequest(Request $request)
 	{
 		$transaction  = new Transaction();
 		$transaction->alumnus_id = 1;
@@ -146,6 +166,8 @@ class AlumniController extends Controller
 			$transaction_requests->copies = $num_of_copies;
 			$transaction_requests->save();
 		}
+
+		return redirect('dashboard');
 	}
 
 	public function editaccount()
