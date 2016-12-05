@@ -150,8 +150,29 @@ class AlumniController extends Controller
 
 	public function editaccount()
 	{
+		$alumnus = Alumnus::find( 1 );
 		$this->params['sidebar_active'] = 'editaccount';
+		$this->params['address'] = $alumnus->address;
+		$this->params['contact_number'] = $alumnus->contact_number;
+		$this->params['email'] = $alumnus->email;
+		$this->params['birthplace'] = $alumnus->birthplace;
+		$this->params['father_name'] = $alumnus->father_name;
+		$this->params['mother_name'] = $alumnus->mother_name;
 		return view('alumni.editaccount', $this->params);
+	}
+
+	public function updateaccount(Request $request)
+	{
+		$alumnus = Alumnus::find( 1 );
+		$alumnus->address = $request->input('address');
+		$alumnus->contact_number = $request->input('contact');
+		$alumnus->email = $request->input('email');
+		$alumnus->birthplace = $request->input('birth');
+		$alumnus->father_name =$request->input('father');
+		$alumnus->mother_name = $request->input('mother');
+		$alumnus->update();
+		$request->session()->flash('alert-success', 'Update Success!');		
+		return redirect('editaccount');
 	}
 
 	public function requestrecord()

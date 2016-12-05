@@ -2,7 +2,7 @@
 @section('title', 'Academic Records Request System - Apply for New Request')
 @section('content')
 <div class="container">
-    <div class="row" style="margin-top: 5%;">
+    <div class="row" id="div-row">
         <div class="col-md-7 col-md-offset-3">
         <form method="POST" action="dashboard">
              {{ csrf_field() }}
