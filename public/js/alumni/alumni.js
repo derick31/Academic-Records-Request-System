@@ -119,5 +119,56 @@ $(document).ready(function(){
 	});
 	///// end of EIMAN DEC 5 /////////
 	
-	
+	//// Aposaga Dec 5 /////
+	$("#reset").click(function(){
+		$("#address-error-message").html("&nbsp;");
+		$("#contact-error-message").html("&nbsp;");
+		$("#email-error-message").html("&nbsp;");
+		$("#birth-error-message").html("&nbsp;");
+		$("#father-error-message").html("&nbsp;");
+		$("#mother-error-message").html("&nbsp;");
+		$('input[type="text"]').removeAttr("value");
+		$('input[type="email"]').removeAttr("value");
+		$('input[type="number"]').removeAttr("value");
+	});
+	$("#submit").click(function (){
+		counter = 0;
+		if($("#address").val() == ""){
+			counter++;
+			$("#address-error-message").text("Invalid address. (e.g. Iloilo City)");
+			$("#address-error-message").removeClass("hidden");
+		}		
+		if($("#contact-number").val() == "" || $("#contact-number").val() < 0 ){
+			counter++;
+			$("#contact-error-message").text("Invalid contact number. (e.g. 09123456789/ 5019050)");
+			$("#contact-error-message").removeClass("hidden");
+		}
+		if($("#email").val() == ""){
+			counter++;
+			$("#email-error-message").text("Invalid email. (e.g. charlesaposaga@gmail.com)");
+			$("#email-error-message").removeClass("hidden");			
+		}
+		if($("#birth").val() == ""){
+			counter++;
+			$("#birth-error-message").text("Invalid birthplace. (e.g. Miagao, Iloilo)");
+			$("#birth-error-message").removeClass("hidden");		
+		}
+		if($("#father").val() == ""){
+			counter++;
+			$("#father-error-message").text("Invalid name of father. (e.g. John Eiman Mission)");
+			$("#father-error-message").removeClass("hidden");	
+		}
+		if($("#mother").val() == ""){
+			counter++;
+			$("#mother-error-message").text("Invalid name of mother. (e.g. Airisse Basinang)");
+			$("#mother-error-message").removeClass("hidden");		
+		}						
+		if(counter != 0){
+			return false;
+		}
+		else{
+			return true;
+		}
+	});
+	//// Aposaga Dec 5 /////
 });
