@@ -13,166 +13,193 @@
         </div>
         <div class="login-form-body" style="background: rgba(123, 17, 19, 0.30); border-radius: 15px;">
             <br/>
-            <form action="" method="get">
-                <center>
-                    <table style="width: 70%;">
-                        <colgroup>
-                            <col style="width: 15%"></col>
-                            <col style="width: 60%"></col>
-                        </colgroup>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">First Name:</span></label>
-                            </td>
-                           <td>
-                                <input class="reg-input" type="text" name="firstname"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Middle Name: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="middlename"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Last Name: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="lastname"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Student Number: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="user-id"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Password: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="password" name="password"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Permanent Address: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="paddress"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Current Address: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="caddress"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Contact Number: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="contactno"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Email Address: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="email"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Father's Name: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="fathername"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Mother's Name: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="mothername"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Place of Birth: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="placebirth"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Degree Program: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="degree"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">College: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="college"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Year Attended:</span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="attended"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>&nbsp;<span class="reg-label">Year Graduated: </span></label>
-                            </td>
-                            <td>
-                                <input class="reg-input" type="text" name="graduated"/>
-                            </td>
-                        </tr>
-                    </table>
-                </center>
+            <form action="{{ url('/register') }}" role="form" method="POST" class="form-horizontal" >
+                 {!! csrf_field() !!}
+                <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">First Name: </label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="firstname"/>
+                        @if ($errors->has('firstname'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('firstname') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('middlename') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Middle Name:</label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="middlename"/>
+                        @if ($errors->has('middlename'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('middlename') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Last Name:</label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="lastname"/>
+                        @if ($errors->has('lastname'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('lastname') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('user-id') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Student Number:</label>
+                     <div class="col-md-6">
+                        <input class="reg-input" type="text" name="student_no"/>
+                        @if ($errors->has('student_no'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('student_no') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Password:</label>
+                     <div class="col-md-6">
+                        <input class="reg-input" type="password" name="password"/>
+                        @if ($errors->has('password'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('paddress') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Permanent Address:</label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="paddress"/>
+                        @if ($errors->has('paddress'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('paddress') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('caddress') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Current Address</label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="caddress"/>
+                        @if ($errors->has('caddress'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('caddress') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('contactno') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Contact Number: </label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="contactno"/>
+                        @if ($errors->has('contactno'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('contactno') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Email Address: </label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="email"/>
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('fathername') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Father's Name: </label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="fathername"/>
+                        @if ($errors->has('fathername'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('fathername') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('mothername') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Mother's Name: </label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="mothername"/>
+                        @if ($errors->has('mothername'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('mothername') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('placebirth') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Place of Birth: </label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="placebirth"/>
+                        @if ($errors->has('placebirth'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('placebirth') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('degree') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Degree Program: </label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="degree"/>
+                        @if ($errors->has('degree'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('degree') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('college') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">College: </label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="college"/>
+                        @if ($errors->has('college'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('college') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('attended') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Year Attended: </label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="attended"/>
+                        @if ($errors->has('attended'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('attended') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group{{ $errors->has('graduated') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Year Graduated: </label>
+                    <div class="col-md-6">
+                        <input class="reg-input" type="text" name="graduated"/>
+                        @if ($errors->has('graduated'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('graduated') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>  
                 <div class="reg-divs">
-                    <!-- <button class="btn btn-sbmt" type="submit" name="register" value="REGISTER" data-toggle="modal" data-target="#modalpost">REGISTER</button> -->
-                    <input type="submit" class="btn btn-sbmt" name="REGISTER" value="REGISTER" id="register-modal" data-toggle="modal" data-target="#modalpost"/>
+                    <button class="btn btn-sbmt" type="submit" name="register" value="REGISTER" id="reg-acct">REGISTER</button>
+                    <!-- <input type="submit" class="btn btn-sbmt" name="REGISTER" value="REGISTER" id="register-modal" data-toggle="modal" data-target="#modalpost"/> -->
                     <br/>
                 </div>
                 <div style="width: 100%; height: 1px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; "></div>
             </form>
     </div>
 </div>
-<div class="modal fade" id="modalpost" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="vertalign"><img src="icon.png" style="width: 100%; height: 100%" alt="icon"/></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Script -->
 <script type="text/javascript"></script>
 
 @endsection
