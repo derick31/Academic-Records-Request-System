@@ -1,3 +1,9 @@
+.btn {
+	font-weight: 900;
+}
+.navbar-margin {
+	margin-top: 2px;
+}
 p.no-account{
 	color: #7B1113;
 	font-size: 11px;
@@ -405,3 +411,37 @@ th {
 .reqs-label {
 	color: rgb(123, 17, 20);
 }
+.acad-record-request-db {
+	border-left: 2px solid #7B1113; 
+	min-height: 633px; 
+	margin-right: -12px;
+}
+.btn-view-receipt {
+	background: transparent; 
+	border: 0px; 
+	color: black; 
+	font-weight: 900;
+}
+.modal-content {
+	font-weight: 900;
+}
+.receipt-header {
+	text-align: center;
+}
+.modal-dialog {
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 6px;
+}
+.modal-content {
+	background: rgba(123, 17, 19, 0.2);
+}
+table.receipt-body>tr>td {
+	text-align: left;
+}
+.receipt-body {width: 100%;}
+.receipt-align-right {text-align: right;}
+.receipt-align-left {text-align: left;}
+.receipt-align-center {text-align: center;}
+.receipt-align-left, .receipt-align-right {font-size: 12px;}
+.receipt-ital {font-style: italic; font-size: 13px;}
+.btn-close-receipt {width: 25%;}
