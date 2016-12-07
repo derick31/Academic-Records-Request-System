@@ -30,7 +30,7 @@ class CreateAlumniTable extends Migration
             $table->foreign('degree_id')->references('degree_id')->on('degrees')->onDelete('cascade');
             $table->integer('year_started');
             $table->integer('year_ended');
-            $table->integer('apply_status');    //added nov 26
+            $table->integer('apply_status')->nullable();    //added nov 26
             $table->date('apply_date');         //added nov 26
             $table->timestamps();
         });
