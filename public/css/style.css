@@ -1,3 +1,18 @@
+/* home */
+.rates-table-container {
+	border: 1px solid transparent;
+}
+.prices-subtype {
+	margin-left: 5%;
+	font-style: italic;
+}
+
+.btn {
+	font-weight: 900;
+}
+.navbar-margin {
+	margin-top: 2px;
+}
 p.no-account{
 	color: #7B1113;
 	font-size: 11px;
@@ -32,11 +47,13 @@ dl, dt {
 	margin-bottom: 0px;	
 	min-height: 100%;
 	min-width: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 .footer-texts {
+	font-weight: 900;
+	color: #7B1113;
 	text-align: center;
-	/*background: rgba(123, 17, 19, 0.4);*/
 	background: transparent;
 }
 .login-form-body {
@@ -63,32 +80,57 @@ dl, dt {
 .rates-table {
 	margin-left: 1%; 
 	margin-right: 1%;
-	box-shadow: 5px 5px 5px rgba(123, 17, 19, 0.8);;
+	box-shadow: 5px 5px 5px rgba(123, 17, 19, 0.8);
+	background: rgba(255, 255, 255, 0.70);
 }
-.reg-divs{
-	margin-bottom: 5px;
+.dt-title {
+	margin-left: 1%; 
+	margin-top: 1%;
 }
-.reg-label{
-	display: inline-block;
+.dl-space {
+	margin-left: 5%;
+}
+.login-body-bg {
+	width: 58%; 
+	background: rgba(255, 255, 255, 0.4); 
+	border-radius: 15px;
+}
+.login-body-wrapper {
+	background: rgba(123, 17, 19, 0.30); 
+	border-radius: 15px;
+}
+.alumnus-init-style {
+	width: 50%; 
+	height: 50px; 
+	background: #7B1113; 
+	border-top-left-radius: 15px;
+}
+.admin-init-style {
+	width: 50%; height: 50px; 
+	background: white; 
+	border-top-right-radius: 15px; 
 	color: #7B1113;
-	font-size: 15px;
-	margin-right: 10px;
 }
-.reg-input{
-	transition: border-radius 0.5s, border 0.5s;
-	border-radius: 10px;
-	width: 80%;
-	height: 30px;
-	padding: 10px;
-	font-weight: 900;
-	border: 3px solid transparent;
-	margin-top: 5px;
-	margin-bottom: 5px;
+.hr-style {
+	border: 1px solid #7B1113; 
+	width: 99%; 
+	margin-top: 12%;
 }
-.reg-input:hover{
-	transition: border-radius 0.5s, border 0.5s;
-	border-radius: 0px;
-	border: 3px solid #7B1113;
+.alumnus-field {
+	margin-left: 5%; 
+	margin-right: 5%; 
+	margin-top: 5%; 
+	margin-bottom: -15px;
+}
+.admin-field {
+	margin-left: 5%; 
+	margin-right: 5%; 
+	margin-top: 5%; 
+	margin-bottom: -15px;
+}
+.rates-table-panel {
+	background: rgba(123, 17, 19, 0.30); 
+	margin-bottom: -1px;
 }
 .btn-sbmt {
 	transition: 0.5s color, 0.5s background, 0.5s border;
@@ -179,6 +221,10 @@ dl, dt {
 }
 .sidebar-column {
 	height: 100%;
+	border-right: 2px solid #7b1113;
+	margin-left: -15px;
+	/* height: 633px; */
+	margin-bottom: 0px;
 }
 
 div>a:link{
@@ -205,12 +251,36 @@ div>a:hover{
 	background: #7B1113;
 	color: white;
 }
+tr.doc-pricing>td {
+	text-align: left;
+	border-bottom: 1px solid #7B1113;
+}
+
+
+
 
 /* Superadmin */
+.btn-default {
+	transition: background 0.5s, color 0.5s;
+	background: #7B1113;
+	color: white;
+}
+.btn-default:hover {
+	transition: background 0.5s, color 0.5s;
+	background: white;
+	color: #7B1113;
+}
+.space-left {
+	margin-left: 33%;
+	text-align: center;
+}
 input[type=text].super-input {
 	border-radius: 5px;
 }
-
+.results {
+	text-align: center; 
+	margin-top: 12px;
+}
 table>th{
 	text-align: center;
 }
@@ -252,27 +322,310 @@ table>th{
 	font-weight: 900;
 	width: 60px;
 }
-.btn-action-view{
-	transition: 0.5s color, 0.5s background, 0.5s border;
-	background: #014421;
-	font-size: 10px; 
-	text-align: center; 
-	padding: 4px;
-	border: 1px solid transparent;
-	color: white;
-	font-weight: 900;
-	width: 60px;
+td {
+	text-align: center;
+	padding: 3px;
+	font-weight: 800;
 }
-.btn-action-view:hover{
+th {
+	font-size: 17px;
+	text-align: center;
+}
+.btn-add {
+	transition: 0.5s color, 0.5s background, 0.5s border;
+	font-weight: 900;
+	background: #014421;
+	padding: 9px;
+	border-radius: 5px;
+	width: 30%;
+	color: white;
+	border: 2px solid transparent;
+	margin-left: 70%;
+	margin-top: 1%;
+}
+.btn-add:hover {
 	transition: 0.5s color, 0.5s background, 0.5s border;
 	color: #014421;
 	background: white;
-	border: 1px solid #014421;
-	font-weight: 900;
-	width: 60px;
+	border: 2px solid #014421;
+	
 }
-table>td {
+.inputs-rows-add-rec {
+	transition: border-radius 0.5s, border 0.5s;
+	width: 65%; 
+	padding: 3px; 
+	margin-bottom: 5px;
+	color: #014421;
+	border-radius: 8px;
+	border: 3px solid transparent;
+	font-weight: 800;
+}
+.inputs-rows-add-rec:hover {
+	transition: border-radius 0.5s, border 0.5s;
+	border-radius: 0px;
+	border: 3px solid #014421;
+}
+.admin-db-content {
+	border-left: 2px solid #7B1113; 
+	min-height: 633px; 
+	margin-right: -12px;
+}
+.alumni-records, .staff-records {
+	border: 2px solid transparent; 
+	min-height: 100%;
+}
+.table-alumni-records, .table-staff-records, .table-requests-made {
+	min-width: 100%;
+}
+.add-record-column {
+	border: 3px solid #014421; 
+	min-height: 100%; 
+	margin-top: 4%; 
+	background: rgba(1, 68, 33, 0.15);
+	border-radius: 4px;
+}
+.label-names {
+	font-style: oblique;
+	font-weight: 900;
+	font-size: 17px;
+
+}
+.add-staff-column {
+	border: 3px solid #7B1113;
+	background: rgba(123, 17, 19, 0.1);
+}
+.heading-label-add-staff {
+	font-weight: 900; 
+	color: #7B1113;
+}
+.add-staff-account-labels {
+	color: #014421;
+	margin-top: 13px;
+}
+.btn-add-emp {
+	transition: background 0.5s, border 0.5s, color 0.5s;
+	border: 2px solid transparent;
+	margin-left: 63%;
+	width: 37%;
+	background: #7B1113;
+	color: white;
+}
+.btn-add-emp:hover{
+	transition: background 0.5s, border 0.5s, color 0.5s;
+	background: white;
+	border: 2px solid #7B1113;
+	color: #7B1113;
+}
+.input-search {
+	transition: border 0.5s;
+	font-weight: 900;
+	color: #7B1113;
+	border: 1px solid transparent;
+}
+.input-search:hover {
+	transition: border 0.5s;
+	border: 1px solid #7B1113;
+}
+.btn-search-record {
+	transition: background 0.5s, border 0.5s, color 0.5s;
+	background: #7B1113;
+	border: 1px solid transparent;
+	color: white;
+	font-weight: 900;
+}
+.btn-search-record:hover {
+	transition: background 0.5s, border 0.5s, color 0.5s;
+	background: white;
+	border: 1px solid #7B1113;
+	color: #7B1113;
+}
+.image-loading {
+	height: 90px;
+	width: 90px;
+
+}
+
+/* user account */
+.top-space {
+	margin-top: -20px;
+}
+.sidebar-layout {
+	margin-left: -15px; 
+	height: 633px;
+}
+.dashboard-name-space {
+	margin-bottom: 4%;
+}
+.welcome-name-space-left {
+	margin-left: 20%;
+}
+.dashboard-welcome {
+	border-left: 2px solid #7B1113; 
+	min-height: 633px; 
+	margin-right: -12px;
+}
+.request-body, .checkbox label, .heading-label, .btn-to-back, .btn-to-next, .btn-rev-req {
+	font-weight: 900;
+}
+.btn-to-back {
+	transition: background 0.5s, border 0.5s;
+	background: #014421;
+	border: 1px solid #014421;
+}
+.btn-to-back:hover {
+	transition: background 0.5s, border 0.5s;
+	background: rgba(1, 68, 33, 0.58);
+	border: 1px solid rgba(1, 68, 33, 0.58);
+}
+.btn-to-next {
+	transition: background 0.5s, border 0.5s;
+	background: rgba(123, 17, 19, 0.8);
+	border: 1px solid rgba(123, 17, 19, 0.8);
+}
+.btn-to-next:hover {
+	transition: background 0.5s, border 0.5s;
+	background: rgba(123, 17, 19, 0.4);
+	border: 1px solid rgba(123, 17, 19, 0.6);
+}
+.btn-rev-req{
+	transition: color 0.5s, background 0.5s, border 0.5s;
+	background: #7B1113;
+	border: 1px solid transparent;
+	color: white;
+}
+.btn-rev-req:hover{
+	transition: color 0.5s, background 0.5s, border 0.5s;
+	background: white;
+	color: #7B1113;
+	border: 1px solid #7B1113;
+}
+.glyphicon-plus-sign, .glyphicon-minus-sign {
+	color: #7B1113;
+}
+.categories>option {
+	font-weight: 800;
+}
+.greetings-user {
+	text-align: center; 
+	color: #7B1113; 
+	margin-top: 5%;
+}
+.reqs-label {
+	color: rgb(123, 17, 20);
+}
+.acad-record-request-db {
+	border-left: 2px solid #7B1113; 
+	min-height: 633px; 
+	margin-right: -12px;
+}
+.btn-view-receipt {
+	background: transparent; 
+	border: 0px; 
+	color: black; 
+	font-weight: 900;
+}
+.modal-content {
+	font-weight: 900;
+	background: white;
+}
+.receipt-header {
 	text-align: center;
-	padding: 3px;
-	color: black;
+}
+.modal-dialog {
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 6px;
+}
+table.receipt-body>tr>td {
+	text-align: left;
+}
+.receipt-note{color: black; 
+	font-weight: 900;
+}
+.receipt-body {
+	width: 100%;
+}
+.receipt-align-right {
+	text-align: right;
+}
+.receipt-align-left {
+	text-align: left;
+}
+.receipt-align-center {
+	text-align: center;
+}
+.receipt-align-left, .receipt-align-right {
+	font-size: 12px;
+}
+.receipt-ital {
+	font-style: italic; font-size: 13px;
+}
+.btn-close-receipt {
+	width: 25%;
+}
+.claim-stub-hr {
+	border: 1px solid #7B1113;
+}
+.request-record-top {
+	margin-top: 5%;
+}
+.welcome-admin-greeting {
+	font-size: 30px; 
+	font-weight: 900; 
+	text-align: center; 
+	color: #7B1113;
+}
+.loading-font {
+	color: #7B1113;
+}
+.add-alumnus-account-label {
+	font-weight: 900; 
+	color: #014421;
+}
+.add-alumnus-top-mg {
+	margin-top: 13px;
+}
+
+
+
+
+
+
+
+
+/* Alumnus */
+.reg-input{
+	transition: border-radius 0.5s, border 0.5s;
+	border-radius: 5px;
+	width: 80%;
+	height: 30px;
+	padding: 11px;
+	font-weight: 900;
+	border: 1px solid transparent;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+select>option{
+	font-weight: 900;
+}
+.reg-input:hover {
+	transition: border-radius 0.5s;
+	border-radius: 0px;
+	border: 1px solid #7B1113;
+}
+.register-bg {
+	background: rgba(123, 17, 19, 0.30); 
+	border-radius: 15px;
+}
+.form-container {
+	margin-left: 0%; 
+	margin-right: 0%;
+	box-shadow: 5px 5px 5px rgba(123, 17, 19, 0.8);
+	background: rgba(255, 255, 255, 0.70);
+}
+.control-label {
+	color: #7B1113;
+}
+
+.gray-background{
+	background: #dedfde;
 }
