@@ -21,8 +21,6 @@ $(document).ready(function(){
         $("#requests").attr('class', 'active-clicked');
     });
 
-    $('.payment-input').hide()
-
     $(document).on('click','.pay-cancel', function() {
         console.log('pay cancel')
         $('.pay-button').show();
@@ -37,12 +35,17 @@ $(document).ready(function(){
     });
 
     $(document).on('click', 'a[data-toggle=modal]', function() {
+        $('#table-here').html('');
+        $('#buttons-here').html('');
         var transactionID = this.id;
         console.log(this.id);
         $.post('/transaction-requests',{transaction_id:transactionID} , function(data){
             $('#table-here').html(data);
         });
-
+        $.post('/transaction-buttons',{transaction_id:transactionID} , function(data){
+            $('#buttons-here').html(data);
+            $('.payment-input').hide();
+        });
         // $("#")
         // $("#deletePost").val(this.id);
     });
@@ -62,12 +65,4 @@ $(document).ready(function(){
             });
         }
     });
-
-
-    // $.post('/background',{image:this.id} , function(data){
-    //             var url = "/uploads/"+data;
-    //             $('body').css('background-image', 'url(' +url+ ')');
-    //         });
-
-
 });

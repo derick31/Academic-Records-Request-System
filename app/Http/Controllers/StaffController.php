@@ -33,6 +33,13 @@ class StaffController extends Controller
         return view('modals.preview',$data);
     }
 
+    public function transactionButtons(Request $request) {
+        $transaction = Transaction::find($request->transaction_id);
+        $data = array(
+            'transaction' => $transaction
+            );
+        return view('modals.buttons',$data);
+    }
 
     //
 }
