@@ -28,6 +28,33 @@
         </div>
 	</div>
 	<div id="dashboard-content" class="col-md-9 dashboard-display" style="border-left: 4px solid #7B1113; min-height: 633px; margin-right: -12px;">
+		<div>Welcome User</div>
+		<div class="container">
+			<div class="row">
+				<div class="panel-default">
+					<div class="panel-heading">
+						<h1>Search Transactions</h1>
+					</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<input type="text" class="form-control" id="search" name="search">
+						</div>
+						<table class="table table-stripped table-hover">
+							<thead>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Request Status</th>
+							</thead>
+							<tbody>
+								
+							</tbody>
+							
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="page-header">
             <h1>Transactions <small>manage your requests here</small></h1>
         </div>
@@ -125,10 +152,29 @@
         </div>
     </div>
 </div>
-@include('modals.transaction')
+@endsection('content')
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#search').keyup( function() {
+			$value = $(this).val();
+			$.ajax({
+				type : 'get',
+				url : '{{URL::to('search')}}',
+				data : {'search':$value},
+				success : function(data){
+						$('tbody').html(data);				
+				}
+
+			});
+		});
+	});
+</script>
 
 <script>
     // token and createPostUrl are needed to be passed to AJAX method call
     var token = '{{csrf_token()}}';
 </script>
 @endsection('content')
+

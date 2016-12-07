@@ -34,6 +34,7 @@ Route::post('/transaction-buttons', 'StaffController@transactionButtons');
 
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
+Route::get('/search', 'SearchController@search');
 
 // Else if staff,
 // Route::get('/account', 'StaffController@dashboard');
