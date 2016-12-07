@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 use App\Transaction;
 use App\TransactionRequests;
 use Auth;
-
 use App\RequestModel;
+use App\Alumnus;
+use App\User;
 class AlumniController extends Controller
 {
 
@@ -44,15 +45,15 @@ class AlumniController extends Controller
 	public function addrequest(Request $request)
 	{
 		$transaction  = new Transaction();
-		$transaction->alumnus_id = 1;
+		$transaction->alumnus_id = Auth::user()->user_id;
 		$transaction->staff_id = 1;
-		$transaction->mailing_adress = 'Miagao, Iloilo';
+		$transaction->mailing_adress = Auth::user()->hasAlumnus()->address;
 		$transaction->retrieval_type = '1';
 		$transaction->claim_code = 1;
 		$transaction->receipt_number = 1;
 		$transaction->purpose_id = 1;
 		$transaction->save();
-		$transaction_id= $transaction->id;
+		$transaction_id= $transaction->transaction_id;
 		if($request->has('authenticated-copies')){
 			$num_of_copies = $request->input('authenticated-copies');
 			$transaction_requests = new TransactionRequests();
@@ -172,7 +173,7 @@ class AlumniController extends Controller
 
 	public function editaccount()
 	{
-		$alumnus = Alumnus::find( 1 );
+		$alumnus = Alumnus::find(Auth::user()->user_id);
 		$this->params['sidebar_active'] = 'editaccount';
 		$this->params['address'] = $alumnus->address;
 		$this->params['contact_number'] = $alumnus->contact_number;
@@ -185,7 +186,7 @@ class AlumniController extends Controller
 
 	public function updateaccount(Request $request)
 	{
-		$alumnus = Alumnus::find( 1 );
+		$alumnus = Alumnus::find(Auth::user()->user_id);
 		$alumnus->address = $request->input('address');
 		$alumnus->contact_number = $request->input('contact');
 		$alumnus->email = $request->input('email');
@@ -201,6 +202,35 @@ class AlumniController extends Controller
 	{
 		$this->params['sidebar_active'] = 'requestrecord';
 		return view('alumni.requestrecord', $this->params);
+	}
+
+	public function alumniregister()
+	{
+		$this->params['sidebar_active'] = 'none';
+		return view('register', $this->params);
+	}
+	public function addalumnirecord(Request $request)
+	{
+		$new_record  = new Alumnus();
+		$new_record->alumnus_id = Auth::user()->user_id;
+		$new_record->first_name = $request->input('firstname');
+		$new_record->middle_name = $request->input('middlename');
+		$new_record->last_name = $request->input('lastname');
+		$new_record->student_number = Auth::user()->user_id;
+		$new_record->address = $request->input('address');
+		$new_record->contact_number = $request->input('contactno');
+		$new_record->email = $request->input('email');
+		$new_record->birthplace = $request->input('placebirth');
+		$new_record->father_name = $request->input('fathername');
+		$new_record->mother_name = $request->input('mothername');
+		$new_record->degree_id = $request->input('degree_program');
+		$new_record->year_started = $request->input('year_started');
+		$new_record->year_ended = $request->input('year_ended');
+		// $new_record->apply_date = '12/12/2016';
+		$new_record->save();
+		return redirect('dashboard');
+
+		
 	}
 
 	
