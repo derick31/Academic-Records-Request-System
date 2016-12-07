@@ -25,8 +25,11 @@ class AlumniController extends Controller
 	
 	public function dashboard()
 	{
-
+		// $transactions_dashboard = Auth::find();
+		// return $transaction_requests;
+		$this->params['student_number'] = Auth::user()->user_id;
 		$this->params['sidebar_active'] = 'dashboard';
+		$this->params['transaction_requests'] = Alumnus::getTransaction()->created_at;
 		return view('alumni.dashboard', $this->params);
 	}
 	
@@ -42,16 +45,20 @@ class AlumniController extends Controller
 		
 		return response()->json(['req' => $array_of_requests]);
 	}
+	private function generateRandomString() {
+		$length = 10;
+		return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+	}
 	public function addrequest(Request $request)
 	{
 		$transaction  = new Transaction();
 		$transaction->alumnus_id = Auth::user()->user_id;
-		$transaction->staff_id = 1;
-		$transaction->mailing_adress = Auth::user()->hasAlumnus()->address;
-		$transaction->retrieval_type = '1';
-		$transaction->claim_code = 1;
-		$transaction->receipt_number = 1;
-		$transaction->purpose_id = 1;
+		// $transaction->staff_id = 1;
+		// $transaction->mailing_adress = Auth::user()->alumnus()->address;
+		$transaction->retrieval_type = $request->input('retrieval-type');
+		$transaction->claim_code = $this->generateRandomString();
+		$transaction->status = 'pending';
+		$transaction->purpose_id = $request->input('purpose');
 		$transaction->save();
 		$transaction_id= $transaction->transaction_id;
 		if($request->has('authenticated-copies')){
@@ -168,7 +175,7 @@ class AlumniController extends Controller
 			$transaction_requests->save();
 		}
 
-		return redirect('dashboard');
+		return redirect('dashboard')->with('status', 'Request is now pending.');;
 	}
 
 	public function editaccount()
@@ -181,6 +188,7 @@ class AlumniController extends Controller
 		$this->params['birthplace'] = $alumnus->birthplace;
 		$this->params['father_name'] = $alumnus->father_name;
 		$this->params['mother_name'] = $alumnus->mother_name;
+		$this->params['student_number'] = Auth::user()->user_id;
 		return view('alumni.editaccount', $this->params);
 	}
 
@@ -200,12 +208,14 @@ class AlumniController extends Controller
 
 	public function requestrecord()
 	{
+		$this->params['student_number'] = Auth::user()->user_id;
 		$this->params['sidebar_active'] = 'requestrecord';
 		return view('alumni.requestrecord', $this->params);
 	}
 
 	public function alumniregister()
 	{
+		$this->params['student_number'] = Auth::user()->user_id;
 		$this->params['sidebar_active'] = 'none';
 		return view('register', $this->params);
 	}
