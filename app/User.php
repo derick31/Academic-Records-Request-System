@@ -26,8 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    public function alumnus ()
+    public function hasAlumnus()
     {
-        return $this->hasOne(Alumnus::class, 'student_number');
+        return $this->hasOne(Alumnus::class, 'user_id');
     }
 }
