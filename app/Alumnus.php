@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Alumnus extends Model
 {
     protected $table = 'alumni';
-
+    protected $primaryKey = 'student_number';
     public function getTransaction ()
     {
         return $this->hasMany(Transaction::class);
