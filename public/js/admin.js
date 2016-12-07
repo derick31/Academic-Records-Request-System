@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+    $.ajaxSetup({
+       headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+    });
+    
 	$("#edit-account-content").hide();
 	$("#request-content").hide();
     $("#dashboard").click(function(){
@@ -22,36 +27,41 @@ $(document).ready(function(){
         console.log('pay cancel')
         $('.pay-button').show();
         $('.payment-input').hide('fast')
-      //   var origDiv = document.getElementById("orig");
-      // var close = document.getElementById("myDiv");
-      // close.style.display = "none";
-      // orig.innerHTML += '<button type="button" class="btn btn-primary pay-button" id="pay">Pay</button>';
+        $('#payment-value').val('');
     })
 
     $(document).on('click','.pay-button', function() {
         console.log('pay clicked')
         $('.pay-button').hide();
         $('.payment-input').show('fast')
-        // var ni = document.getElementById('myDiv');
-        //   var numi = document.getElementById('theValue');
-        //   var num = (document.getElementById('theValue').value -1)+ 2;
-        //   numi.value = num;
-        //   var newdiv = document.createElement('div');
-        //   var divIdName = 'my'+num+'Div';
-        //   newdiv.setAttribute('id',divIdName);
-        //   newdiv.innerHTML = '<input type="text"/>' + '<button id="x" type="button" class="btn btn-danger pay-cancel"><span class="glyphicon glyphicon-remove white-text" aria-hidden="true"></span></button>' + '<button type="button" class="btn btn-success">Ok</button>'
-        //   ni.appendChild(newdiv);
-
-        //   var pay = document.getElementById('pay');
-        //   pay.style.display = "none";
     });
 
-    // $(document).on('click', '.privacy-toggle', function() {
-    //     var a = this.id.split('-');
-    //         $.get('/post/'+a[1]+'/privacy', function(data) {
-    //             $("#privacy-"+a[1]).html(data);
+    $(document).on('click', 'a[data-toggle=modal]', function() {
+        $("#transaction-id-view").text(this.id);
+        $("#hidden-transaction-id").val(this.id);
+        // $("#")
+        // $("#deletePost").val(this.id);
+    });
+
+    $(document).on('click','#submit-number', function() {
+        var transactionID = $("#hidden-transaction-id").val();
+        var submittedNumber = $('#payment-value').val();
+        console.log('submitted '+submittedNumber+' for '+ transactionID);
+        // $.post('/updatePayment',{transaction_id:transactionID}, function(data) {
+        //     console.log(data);
+        // });
+        if(submittedNumber != '') {
+            $.post('/updatePayment',{transaction_id:transactionID} , function(data){
+                $('')
+            });
+        }
+    });
+
+
+    // $.post('/background',{image:this.id} , function(data){
+    //             var url = "/uploads/"+data;
+    //             $('body').css('background-image', 'url(' +url+ ')');
     //         });
-    // });
 
 
 });

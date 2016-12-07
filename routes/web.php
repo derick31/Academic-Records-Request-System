@@ -27,6 +27,9 @@ Route::get('/user/account', 'PagesController@acct_user');
 Route::get('/registration', 'PagesController@register');
 Route::get('/superadmin','PagesController@superadmin_home');
 
+//controller for the staff
+Route::post('/updatePayment', 'StaffController@updatePayment');
+
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 

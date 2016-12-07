@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="_token" content="{!! csrf_token() !!}"/>
         <title>@yield('title')</title>
 
         <!-- Fonts -->
@@ -21,15 +21,15 @@
         <script src="js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="{!! url('css/style.css')!!}">
         <link rel="stylesheet" type="text/css" href="{!! url('css/alumni/alumni.css')!!}">
-        <!-- Scripts -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <script type="text/javascript" src="{!! url('js/homepage.js')!!}"></script>
         <script type="text/javascript" src="{!! url('js/user.js')!!}"></script>
         <script type="text/javascript" src="{!! url('js/admin.js')!!}"></script>
         <script type="text/javascript" src="{!! url('js/alumni/alumni.js')!!}"></script>
         <script type="text/javascript" src="{!! url('js/superadmin.js')!!}"></script>
+        <!-- Scripts -->
+        {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> --}}
+        {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> --}}
         {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> --}}
         {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> --}}
        
@@ -112,4 +112,5 @@
         @endif
         {{-- @include('footer') --}}
     </body>
+
 </html>

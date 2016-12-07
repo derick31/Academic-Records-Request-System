@@ -53,13 +53,15 @@
                 </ul>
             </div>
             <br>
+            @foreach ($transactions as $transaction)
             <div class="panel panel-default">
-                <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-success">paid</span></div>
+                <div class="panel-heading">Transaction #: {{ $transaction->transaction_id }} <span class="label label-success">{{ $transaction->status}}</span></div>
                 <div class="panel-body">
-                    <span>Juan Dela Cruz</span>
-                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">View</button>
+                    <span>{{ $transaction->alumnus->first_name}}</span>
+                    <a class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" id="{{$transaction->transaction_id}}">View</a>
                 </div>
             </div>
+            @endforeach
         </div>
         <div class="col-md-4">
             <h4>Updates:</h4>
@@ -124,4 +126,9 @@
     </div>
 </div>
 @include('modals.transaction')
+
+<script>
+    // token and createPostUrl are needed to be passed to AJAX method call
+    var token = '{{csrf_token()}}';
+</script>
 @endsection('content')

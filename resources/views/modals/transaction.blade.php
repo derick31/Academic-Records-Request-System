@@ -14,7 +14,8 @@
                    <p>12/05/16</p>
                </div>
                <div class="col-md-4 text-right">
-                   <p>0001</p>
+                   <p id="transaction-id-view"></p>
+                   <input type="hidden" id="hidden-transaction-id" >
                </div>
            </div>
            <div class="row">
@@ -51,14 +52,14 @@
            </div>
            <div class="row" id="orig">
             <div class="col-md-12">
-               Status: Waiting for Payment
+               Status: <span id="status-text">waiting for payment</span>
                <br>
                <button class="btn btn-primary pay-button pull-left" id="pay">Pay</button>
                <div class="input-group payment-input">
-                    <input type="text" class="form-control" aria-label="...">
+                    <input type="text" class="form-control" id="payment-value">
                     <div class="input-group-btn">
                         <button type="button" class="btn btn-danger pay-cancel"><span class="glyphicon glyphicon-remove white-text" aria-hidden="true"></span></button>
-                        <button type="button" class="btn btn-success">submit</button>
+                        <button type="button" class="btn btn-success" id="submit-number">submit</button>
                     </div>
                 </div>
             </div>
