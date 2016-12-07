@@ -26,7 +26,7 @@ class HomeController extends Controller
     {
         if(Auth::user()){
             if(Auth::user()->type == 'alumni')
-                return view('user.account');
+                return redirect('dashboard');
             elseif (Auth::user()->type == 'staff') {
                 return view('admin.admin');
             }       

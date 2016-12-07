@@ -13,18 +13,32 @@
         <link rel="icon" href="{!! url('img/title_logo.jpg') !!}" type="image/jpg" />
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="{!! url('css/bootstrap.min.css')!!}">
-        <link rel="stylesheet" type="text/css" href="{!! url('css/bootstrap.css')!!}">
-        <link rel="stylesheet" type="text/css" href="{!! url('css/alumni/alumni.css')!!}">
+         {{-- <script src="{!! url('js/jquery-3.1.1.min.js')!!}"></script> --}}
+        {{-- <link rel="stylesheet" type="text/css" href="{!! url('css/bootstrap.css')!!}"> --}}
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="{!! url('css/style.css')!!}">
+        <link rel="stylesheet" type="text/css" href="{!! url('css/alumni/alumni.css')!!}">
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="{!! url('js/jquery-3.1.1.min.js')!!}"></script>
+
         <script type="text/javascript" src="{!! url('js/homepage.js')!!}"></script>
         <script type="text/javascript" src="{!! url('js/user.js')!!}"></script>
         <script type="text/javascript" src="{!! url('js/admin.js')!!}"></script>
         <script type="text/javascript" src="{!! url('js/alumni/alumni.js')!!}"></script>
         <script type="text/javascript" src="{!! url('js/superadmin.js')!!}"></script>
+        {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> --}}
+        {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> --}}
+       
+        {{-- <link href="css/dashboard.css" rel="stylesheet" type="text/css"/> --}}
+        {{-- <link href="css/bootstrap.min.css"  rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script> --}}
+
+        {{-- ALUMNI CSS AND JAVASCRIPT
+        <link href="css/alumni/alumni.css"  rel="stylesheet" type="text/css"/>
+        <script src="js/alumni/alumni.js"></script> --}}
         <style>
             * {
                 color: black;
@@ -36,6 +50,7 @@
                 height: 100vh;
                 margin: 0;
             }
+
 
             .full-height {
                 height: 100vh;
@@ -82,13 +97,16 @@
 
     </head>
     <body>
+
         @include('navbar')
+        @if(Auth::user()):
+         <div class="col-md-12" style="margin-top: -20px;">
+         @include('sidebar')
+        @endif
         @yield('content')
-        @include('footer')
+        @if(Auth::user())
+            </div>
+        @endif
+        {{-- @include('footer') --}}
     </body>
-    <script>
-        window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
-    </script>
 </html>
