@@ -29,6 +29,7 @@ Route::get('/superadmin','PagesController@superadmin_home');
 
 //controller for the staff
 Route::post('/updatePayment', 'StaffController@updatePayment');
+Route::post('/transaction-requests', 'StaffController@transactionRequests');
 
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');

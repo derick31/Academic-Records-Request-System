@@ -37,8 +37,12 @@ $(document).ready(function(){
     });
 
     $(document).on('click', 'a[data-toggle=modal]', function() {
-        $("#transaction-id-view").text(this.id);
-        $("#hidden-transaction-id").val(this.id);
+        var transactionID = this.id;
+        console.log(this.id);
+        $.post('/transaction-requests',{transaction_id:transactionID} , function(data){
+            $('#table-here').html(data);
+        });
+
         // $("#")
         // $("#deletePost").val(this.id);
     });
@@ -51,8 +55,10 @@ $(document).ready(function(){
         //     console.log(data);
         // });
         if(submittedNumber != '') {
-            $.post('/updatePayment',{transaction_id:transactionID} , function(data){
-                $('')
+            $.post('/updatePayment',{transaction_id:transactionID,receipt_number:submittedNumber} , function(data){
+                $('#status-text').text('paid')
+                $('#download-button').prop('disabled', false);
+                console.log(data);
             });
         }
     });
