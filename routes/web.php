@@ -37,6 +37,11 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/search', 'SearchController@search');
 
+Route::get('/pdf', function(){
+    $pdf = PDF::loadView('home');
+    return $pdf->download('sample.pdf');
+});
+
 // Else if staff,
 // Route::get('/account', 'StaffController@dashboard');
 
