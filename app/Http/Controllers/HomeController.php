@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Transaction;
 
 class HomeController extends Controller
 {
@@ -28,7 +29,11 @@ class HomeController extends Controller
             if(Auth::user()->type == 'alumni')
                 return redirect('dashboard');
             elseif (Auth::user()->type == 'staff') {
-                return view('admin.admin');
+                $transactions = Transaction::where('status','!=','received')->orderBy('created_at', 'desc')->get();
+                $data = array(
+                    'transactions' => $transactions
+                    );
+                return view('admin.admin',$data);
             }       
         }else {
             return view('welcome');

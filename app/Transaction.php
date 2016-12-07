@@ -10,7 +10,8 @@ class Transaction extends Model
 
     public function alumnus()
     {
-        return $this->belongsTo(Alumnus::class);
+        return $this->belongsTo(Alumnus::class,'alummnus_id');
+        // return Alumnus::where('student_number',$this->alummnus_id);
     }
 
     public function requests()
