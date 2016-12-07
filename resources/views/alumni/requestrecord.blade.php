@@ -1,9 +1,9 @@
 @extends('layout')
 @section('title', 'Academic Records Request System - Apply for New Request')
 @section('content')
-<div class="container">
-    <div class="row" style="margin-top: 5%;">
-        <div class="col-md-7 col-md-offset-3">
+{{-- <div class="container"> --}}
+    <div style="margin-top: 5%;">
+        <div class="col-md-8 col-md-offset-1">
         <form method="POST" action="addrequest">
             {{ csrf_field() }}
             <div class="panel panel-default">
@@ -188,9 +188,11 @@
         </form>
     </div>
 </div>
-</div><script>
+{{-- </div> --}}
+<script>
     // token and createPostUrl are needed to be passed to AJAX method call
     var token = '{{csrf_token()}}';
     var paymentassessmentUrl = 'paymentassessment';
 </script>
+
 @endsection
