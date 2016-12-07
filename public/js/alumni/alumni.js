@@ -90,15 +90,8 @@ $(document).ready(function(){
 				console.log(price);
 			}
 		});
-		$.ajax({
-			  url: paymentassessmentUrl,
-			  type: 'POST',
-			  dataType: 'json',
-			  data: {IDs:  paymentAssessment, num_of_copies: price, _token: token},
-			  complete: function(xhr, textStatus) {
-			  },
-			  success: function(msg) {
-			  	console.log(msg);
+		$.post('/paymentassessment',{IDs:  paymentAssessment, num_of_copies: price} , function(msg){
+                console.log(msg);
 			  	response = '<table style="margin-bottom: 0px" class="table"><th>Form</th><th>Price</th><th>Number of Copies</th><th>Total</th>';
 			  	total=0;
 			  	for(i=0; i<msg['req'].length; i+=4){
@@ -110,12 +103,7 @@ $(document).ready(function(){
 				// console.log(msg['req']);
 				// $('html, body').removeClass('modalOverlay');
 				$('#assessment-modal').modal();
-			  },
-			  error: function(xhr, textStatus, errorThrown) {
-			    //called when there is an error
-			  }
-			});
-		// $('#assessment').html(paymentAssessment);
+            });
 	});
 	///// end of EIMAN DEC 5 /////////
 	

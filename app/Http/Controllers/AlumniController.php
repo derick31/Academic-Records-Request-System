@@ -44,7 +44,7 @@ class AlumniController extends Controller
 	public function addrequest(Request $request)
 	{
 		$transaction  = new Transaction();
-		$transaction->alumnus_id = 1;
+		$transaction->alumnus_id = Auth::user()->user_id;
 		$transaction->staff_id = 1;
 		$transaction->mailing_adress = 'Miagao, Iloilo';
 		$transaction->retrieval_type = '1';
@@ -52,7 +52,7 @@ class AlumniController extends Controller
 		$transaction->receipt_number = 1;
 		$transaction->purpose_id = 1;
 		$transaction->save();
-		$transaction_id= $transaction->id;
+		$transaction_id= $transaction->transaction_id;
 		if($request->has('authenticated-copies')){
 			$num_of_copies = $request->input('authenticated-copies');
 			$transaction_requests = new TransactionRequests();

@@ -15,8 +15,15 @@ class StaffController extends Controller
     }
 
     public function updatePayment(Request $request) {
-        // return $request->transaction_id;
-        return "test";
+        $transaction = Transaction::find($request->transaction_id);
+        $receipt_number = $request->receipt_number;
+        $transaction->status = "paid";
+        $transaction->receipt_number = $receipt_number;
+        $transaction->save();
+    }
+
+    public function getRequests(Request $request) {
+        
     }
 
 

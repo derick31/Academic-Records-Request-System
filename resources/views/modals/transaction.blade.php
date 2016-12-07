@@ -46,7 +46,7 @@
                   </table>
                </div>
                <div class="col-md-3">
-                   <button type="button" class="btn btn-success btn-block" disabled="disabled">Download</button>
+                   <button type="button" class="btn btn-success btn-block" disabled="disabled" id="download-button">Download</button>
                    -click this to generate all the documents
                </div>
            </div>

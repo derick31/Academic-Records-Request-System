@@ -33,6 +33,7 @@ class HomeController extends Controller
                 $data = array(
                     'transactions' => $transactions
                     );
+                // return $transactions;
                 return view('admin.admin',$data);
             }       
         }else {
