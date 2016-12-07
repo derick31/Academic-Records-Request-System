@@ -139,18 +139,23 @@
                     </div>
                 </div>
                 <div id="panel2">
-                    <select id="category" class="form-control" name="category">
-                        <option selected disabled>Please Choose Category:</option>
-                        <option>Employment</option>
-                        <option>Scholarship</option>
-                        <option>Enrollment</option>
-                        <option>UP Visayas/UP System</option>
-                        <option>Transfer to other school</option>
-                        <option>PRC Licensure Exam</option>
-                        <option>Certification, Authentication, and Verification for DFA</option>
-                        <option>Migration</option>
-                        <option>Records Purposes</option>
-                        <option>Others</option>
+                    <select id="purpose" class="form-control" name="purpose">
+                        <option selected disabled>Please Choose Purpose:</option>
+                        <option value="1">Employment</option>
+                        <option value="2">Scholarship</option>
+                        <option value="3">Enrollment</option>
+                        <option value="4">UP Visayas/UP System</option>
+                        <option value="5">Transfer to other school</option>
+                        <option value="6">PRC Licensure Exam</option>
+                        <option value="7">Certification, Authentication, and Verification for DFA</option>
+                        <option value="8">Migration</option>
+                        <option value="9">Records Purposes</option>
+                    </select>
+                    <br/>
+                    <select id="retrieval-type" class="form-control" name="retrieval-type">
+                        <option selected disabled>Please Choose Retrieval Type:</option>
+                        <option value="1">Pick-up</option>
+                        <option value="2">Mail</option>
                     </select>
                     <p>&nbsp;</p>
                     <input id="others" type="text" class="form-control hide" placeholder="Others" name="others"/>
