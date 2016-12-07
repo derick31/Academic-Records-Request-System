@@ -33,6 +33,12 @@
         </div>
         
         <div class="col-md-8">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+                </span>
+            </div>
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Sort by:
@@ -103,67 +109,7 @@
 	</div>
 	<div id="request-content" class="col-md-9 dashboard-display" style="border-left: 4px solid #7B1113; min-height: 633px; margin-right: -12px;">
 		<div>View Requests</div>
-		{{-- <div class="col-md-12">
-	      	<div class="col-md-7" style="border: 2px solid transparent; min-height: 100%;">
-		        <table border='0' style="min-width: 100%;">
-		          <th>REQUESTOR NAME</th>
-		          <th>REQUEST TYPE</th>
-		          <th>REQUEST DATE</th>
-		          <th>REQUEST TIME</th>
-		          <th>ACTION</th>
 
-		          <tr>
-		            <td>Grace Icay</td>
-		            <td>Transcript of Records</td>
-		            <td>July 12, 2016</td>
-		            <td>09:00AM</td>
-		            <td><button class="btn btn-action-view" id="view1" data-toggle="modal" data-target="#record-modal">View More</button></td>
-		          </tr>
-		         <tr>
-		            <td>Grace Icay</td>
-		            <td>Transcript of Records</td>
-		            <td>July 12, 2016</td>
-		            <td>09:00AM</td>
-		            <td><button class="btn btn-action-view" id="view2" data-toggle="modal" data-target="#record-modal">View More</button></td>
-		          </tr>
-		          <tr>
-		            <td>Grace Icay</td>
-		            <td>Transcript of Records</td>
-		            <td>July 12, 2016</td>
-		            <td>09:00AM</td>
-		            <td><button class="btn btn-action-view" id="view3" data-toggle="modal" data-target="#record-modal">View More</button></td>
-		          </tr>
-		          <tr>
-		            <td>Grace Icay</td>
-		            <td>Transcript of Records</td>
-		            <td>July 12, 2016</td>
-		            <td>09:00AM</td>
-		            <td><button class="btn btn-action-view" id="view4" data-toggle="modal" data-target="#record-modal">View More</button></td>
-		          </tr>
-		          <tr>
-		            <td>Grace Icay</td>
-		            <td>Transcript of Records</td>
-		            <td>July 12, 2016</td>
-		            <td>09:00AM</td>
-		            <td><button class="btn btn-action-view" id="view5" data-toggle="modal" data-target="#record-modal">View More</button></td>
-		          </tr>
-		          <tr>
-		            <td>Grace Icay</td>
-		            <td>Transcript of Records</td>
-		            <td>July 12, 2016</td>
-		            <td>09:00AM</td>
-		            <td><button class="btn btn-action-view" id="view6" data-toggle="modal" data-target="#record-modal">View More</button></td>
-		          </tr>
-		          <tr>
-		            <td>Grace Icay</td>
-		            <td>Transcript of Records</td>
-		            <td>July 12, 2016</td>
-		            <td>09:00AM</td>
-		            <td><button class="btn btn-action-view" id="view7" data-toggle="modal" data-target="#record-modal">View More</button></td>
-		          </tr>
-		        </table>
-		    </div>
-		</div> --}}
 	</div>
 	<div class="modal fade" id="record-modal" role="dialog">
         <div class="modal-dialog" style="width: 100%;">
