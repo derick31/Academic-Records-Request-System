@@ -25,8 +25,15 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::user()){
-            if(Auth::user()->type == 'alumni')
-                return redirect('dashboard');
+            if(Auth::user()->type == 'alumni'){
+                $alumni = count(Alumnus::where('alumnus_id', Auth::user()->user_id)->first());
+                if($alumni == 1){
+                    return redirect('dashboard');
+                }
+                else{
+                    return redirect('alumniregister');
+                }
+            }
             elseif (Auth::user()->type == 'staff') {
                 return view('admin.admin');
             }       
