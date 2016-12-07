@@ -20,6 +20,7 @@ Route::post('/paymentassessment', 'AlumniController@paymentassessment');
 Route::post('/addrequest', 'AlumniController@addrequest');
 Route::post('/updateaccount', 'AlumniController@updateaccount');
 Route::get('/requestrecord', 'AlumniController@requestrecord');
+Route::get('/editaccount', 'AlumniController@requestrecord');
 
 
 Route::get('/user/account', 'PagesController@acct_user');
@@ -33,4 +34,3 @@ Route::get('/home', 'HomeController@index');
 // Route::get('/account', 'StaffController@dashboard');
 
 Auth::routes();
-
