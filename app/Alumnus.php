@@ -9,9 +9,9 @@ class Alumnus extends Model
     protected $table = 'alumni';
     protected $primaryKey = 'student_number';
 
-    public function getTransaction ()
+    public function transactions ()
     {
-        return $this->hasMany(Transaction::class,'student_number');
+        return $this->hasMany(Transaction::class,'alumnus_id');
     }
     public function getTransactionRequests ()
     {

@@ -34,9 +34,8 @@
         
         <div class="col-md-8">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
+                <input type="text" class="form-control" id="search" placeholder="Search for...">
                 <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
                 </span>
             </div>
             <div class="dropdown">
@@ -53,15 +52,10 @@
                 </ul>
             </div>
             <br>
-            @foreach ($transactions as $transaction)
-            <div class="panel panel-default">
-                <div class="panel-heading">Transaction #: {{ $transaction->transaction_id }} <span class="label label-success">{{ $transaction->status}}</span></div>
-                <div class="panel-body">
-                    <span>{{ $transaction->alumnus->first_name}}</span>
-                    <a class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" id="{{$transaction->transaction_id}}">View</a>
-                </div>
+            <div id="results-here">
+                @include('admin.search')
             </div>
-            @endforeach
+            
         </div>
         <div class="col-md-4">
             <h4>Updates:</h4>
@@ -128,7 +122,17 @@
 @include('modals.transaction')
 
 <script>
-    // token and createPostUrl are needed to be passed to AJAX method call
-    var token = '{{csrf_token()}}';
+    $('#search').keyup( function() {
+        $value = $(this).val();
+        $.ajax({
+            type : 'get',
+            url : '{{URL::to('search')}}',
+            data : {'search':$value},
+            success : function(data){
+                    console.log(data);
+                    $('#results-here').html(data);              
+            }
+        });
+    });
 </script>
 @endsection('content')
