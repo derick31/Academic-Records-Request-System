@@ -1,9 +1,9 @@
 @extends('layout')
 @section('title', 'Academic Records Request System - Edit Account')
 @section('content')
-<div class="container">
-	<div class="row" id="div-row">
-		<div class="col-md-7 col-md-offset-3" id="edit-col">
+<!-- <div class="container"> -->
+	<div id="div-row">
+		<div class="col-md-8 col-md-offset-1">
 			
 			@if(Session::has('alert-success'))
 				<div class="alert alert-success alert-dismissible" role="alert">
@@ -72,5 +72,5 @@
 			</form>		
 		</div>
 	</div>
-</div>
+<!-- </div> -->
 @endsection
