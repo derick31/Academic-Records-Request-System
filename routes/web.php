@@ -17,10 +17,12 @@ Route::get('/alumnilogin', 'PagesController@index');
 // If alumni,
 Route::get('/dashboard', 'AlumniController@dashboard');
 Route::post('/paymentassessment', 'AlumniController@paymentassessment');
-Route::post('/addrequest', 'AlumniController@addrequest');
+oute::post('/addrequest', 'AlumniController@addrequest');
 Route::post('/updateaccount', 'AlumniController@updateaccount');
 Route::get('/requestrecord', 'AlumniController@requestrecord');
-Route::get('/editaccount', 'AlumniController@requestrecord');
+Route::get('/editaccount', 'AlumniController@editaccount');
+Route::get('/alumniregister', 'AlumniController@alumniregister');
+Route::post('/addalumnirecord', 'AlumniController@addalumnirecord');
 
 
 Route::get('/user/account', 'PagesController@acct_user');
