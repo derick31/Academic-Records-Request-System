@@ -28,6 +28,6 @@ class User extends Authenticatable
     ];
     public function alumnus ()
     {
-        return $this->hasOne(Alumnus::class);
+        return $this->hasOne(Alumnus::class, 'student_number');
     }
 }
