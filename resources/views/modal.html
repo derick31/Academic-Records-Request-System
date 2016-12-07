@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    function addElement() {
+
+      var ni = document.getElementById('myDiv');
+      var numi = document.getElementById('theValue');
+      var num = (document.getElementById('theValue').value -1)+ 2;
+      numi.value = num;
+      var newdiv = document.createElement('div');
+      var divIdName = 'my'+num+'Div';
+      newdiv.setAttribute('id',divIdName);
+      newdiv.innerHTML = '<input type="text"/>' +  '<button id="x" type="button" class="btn btn-danger" onclick="removeElement();">x</button>' + '<button type="button" class="btn btn-success" onlick="ready">Ok</button>'
+      ni.appendChild(newdiv);
+
+      var d = document.getElementById('myDiv');
+
+      var olddiv = document.getElementById('pay');
+
+      d.removeChild(olddiv);
+    }
+  </script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Trigger</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Transaction Details</h4>
+        </div>
+        <div class="modal-body">
+           <div class="container col-md-12">
+               <div class="row">
+                   <div class="col-md-4">
+                       <p>Juan Dela Cruz</p>
+                   </div>
+                   <div class="col-md-4 text-center">
+                       <p>12/05/16</p>
+                   </div>
+                   <div class="col-md-4 text-right">
+                       <p>0001</p>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-md-9">
+                       <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Request</th>
+                            <th># of copies</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tbody>
+                          <tfoot>
+                            <tr>
+                              <td>Request For Application</td>
+                              <td></td>
+                              <td>Total:</td>
+                              <td></td>
+                            </tr>
+                          </tfoot>
+                      </table>
+                   </div>
+                   <div class="col-md-3">
+                       <button type="button" class="btn btn-success pull-right">Download</button>
+                       <div class="text-right">
+                           Instructions
+                       </div>
+                   </div>
+               </div>
+               <div class="row">
+                   <p>Status: Waiting for Payment</p>
+                   <a class="col-md-2" href="javascript:;" onclick="addElement();"><button type="button" class="btn btn-primary" id="pay">Pay</button></a>
+                   <input type="hidden" value="0" id="theValue" />
+
+
+                    <div id="myDiv" class="col-md-10"> </div>
+               </div>
+               <div class="row">
+                   <div class="col-md-4">
+                      <!-- <button type="button" class="btn btn-primary">Ready...</button>-->
+                   </div>
+                </div>
+           </div> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>
