@@ -57,42 +57,7 @@
                 <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-success">paid</span></div>
                 <div class="panel-body">
                     <span>Juan Dela Cruz</span>
-                    <button type="button" class="btn btn-primary pull-right">View</button>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-success">paid</span></div>
-                <div class="panel-body">
-                    <span>Juan Dela Cruz</span>
-                    <button type="button" class="btn btn-primary pull-right">View</button>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-success">paid</span><span class="pull-right"> December 25, 2016</span></div>
-                <div class="panel-body">
-                    <span>Juan Dela Cruz</span>
-                    <button type="button" class="btn btn-primary pull-right">View</button>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-warning">pending</span></div>
-                <div class="panel-body">
-                    <span>Juan Dela Cruz</span>
-                    <button type="button" class="btn btn-primary pull-right">View</button>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-warning">pending</span></div>
-                <div class="panel-body">
-                    <span>Juan Dela Cruz</span>
-                    <button type="button" class="btn btn-primary pull-right">View</button>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Transaction #: 0123-5739-1231    <span class="label label-warning">pending</span></div>
-                <div class="panel-body">
-                    <span>Juan Dela Cruz</span>
-                    <button type="button" class="btn btn-primary pull-right">View</button>
+                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">View</button>
                 </div>
             </div>
         </div>
@@ -158,4 +123,5 @@
         </div>
     </div>
 </div>
+@include('modals.transaction')
 @endsection('content')
