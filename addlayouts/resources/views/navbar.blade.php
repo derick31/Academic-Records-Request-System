@@ -1,5 +1,5 @@
-<div>
-    <nav class="navbar navbar-default navbar-bg" style="margin-bottom: 0px">
+<div style="margin-top: -1px;">
+    <nav class="navbar navbar-default navbar-bg">
         <div class="container-fluid topnav nav-size">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#opts-collapse">
@@ -18,7 +18,7 @@
             </div>
             <div class="collapse navbar-collapse" id="opts-collapse">
                 <ul class="nav navbar-nav navbar-right" id="">
-                    </li>
+                    
                 </ul>
             </div>
         </div>

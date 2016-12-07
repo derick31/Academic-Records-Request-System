@@ -11,3 +11,27 @@
 #add-request{
 	display: none;
 }
+#invalid-apply, .date-application{
+	display: none;
+}
+#div-row{
+	margin-top: 5%;
+}
+.edit-label{
+	margin-top: 5px;
+}
+#edit-col{
+	width: 71.333333%;
+}
+.panel-edit-width{
+	width: 812px;
+}
+.error{
+	margin-top: 10px;
+	color: red;
+	font-style: italic;
+}
+.clearfix{
+	width: 813px;
+	margin-bottom: 10px;
+}
