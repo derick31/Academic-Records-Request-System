@@ -17,7 +17,7 @@ class Transaction extends Model
 
     public function requests()
     {
-        return $this->belongsToMany(RequestModel::class,'transaction_requests', 'transaction_id', 'request_id');
+        return $this->belongsToMany(RequestModel::class,'transaction_requests', 'transaction_id', 'request_id')->withPivot('copies');
     }
 
     public function transactionRequests()

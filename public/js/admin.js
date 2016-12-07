@@ -37,11 +37,12 @@ $(document).ready(function(){
     });
 
     $(document).on('click', 'a[data-toggle=modal]', function() {
-        
+        var transactionID = this.id;
+        console.log(this.id);
+        $.post('/transaction-requests',{transaction_id:transactionID} , function(data){
+            $('#table-here').html(data);
+        });
 
-        
-        $("#transaction-id-view").text(this.id);
-        $("#hidden-transaction-id").val(this.id);
         // $("#")
         // $("#deletePost").val(this.id);
     });

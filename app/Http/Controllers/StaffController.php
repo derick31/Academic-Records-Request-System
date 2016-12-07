@@ -22,8 +22,15 @@ class StaffController extends Controller
         $transaction->save();
     }
 
-    public function getRequests(Request $request) {
-        
+    public function transactionRequests(Request $request) {
+        $transaction = Transaction::find($request->transaction_id);
+        $requests = Transaction::find($request->transaction_id)->requests;
+        // return $requests;
+        $data = array(
+            'requests' => $requests,
+            'transaction' => $transaction
+            );
+        return view('modals.preview',$data);
     }
 
 
