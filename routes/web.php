@@ -24,7 +24,7 @@ Route::get('/editaccount', 'AlumniController@requestrecord');
 
 
 Route::get('/user/account', 'PagesController@acct_user');
-Route::get('/register', 'PagesController@register');
+Route::get('/registration', 'PagesController@register');
 Route::get('/superadmin','PagesController@superadmin_home');
 
 Route::get('/', 'HomeController@index');
